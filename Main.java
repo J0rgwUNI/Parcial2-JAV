@@ -1,26 +1,35 @@
+//importamos la clase Scanner para poder leer datos del usuario
 import java.util.Scanner;
-
+//logica de la clase main que ejecuta el programa
 public class Main {
-    
-public static void main(String[] args) {
-        Empleado[] empleados = new Empleado[3];
-        empleados[0] = new Empleado("Juan", "Desarrollador", 50000);
-        empleados[1] = new Empleado("María", "Diseñadora", 45000);
-        empleados[2] = new Empleado("Pedro", "Gerente", 60000);
-
-        SistemaGestionEmpleados sistema = new SistemaGestionEmpleados(empleados);
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduzca el porcentaje de aumento de salario: ");
-        double porcentaje = scanner.nextDouble();
-
-        sistema.aumentarSalario(porcentaje);
-        
+    //creamos un arreglo de empleados
+    private static Empleado[] empleados = {
+        new Empleado("Juan", "Gerente", 1000),
+        new Empleado("Pedro", "Jefe de Proyecto", 800),
+        new Empleado("Maria", "Analista", 600),
+        new Empleado("Luis", "Programador", 500)
+    };
+    //metodo main que ejecuta el programa    
+    private static void listarEMP(Empleado[] empleados) {
         System.out.println("Lista de Empleados:");
         for (Empleado empleado : empleados) {
             System.out.println(empleado);
         }
-
-        scanner.close();
     }
+
+    public static void main(String[] args) {
+
+            //creamos el objeto de la clase SistemaGestionEmpleados
+            SistemaGestionEmpleados sistema = new SistemaGestionEmpleados(empleados);
+            //leemos el porcentaje de aumento de salario
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Introduzca el porcentaje de aumento de salario: ");
+            double porcentaje = scanner.nextDouble();
+            //aumentamos el salario de los empleados
+            sistema.aumentarSalario(porcentaje);
+            //imprimimos la lista de empleados
+            listarEMP(empleados);
+            //cerramos el scanner
+            scanner.close();
+        }
 }
