@@ -11,7 +11,7 @@ public class Main {
     };
     //metodo main que ejecuta el programa    
     private static void listarEMP(Empleado[] empleados) {
-        System.out.println("Lista de Empleados:");
+        System.out.println(MagicStrings.LISTA_EMPLEADOS);
         for (Empleado empleado : empleados) {
             System.out.println(empleado);
         }
@@ -23,7 +23,7 @@ public class Main {
             SistemaGestionEmpleados sistema = new SistemaGestionEmpleados(empleados);
             //leemos el porcentaje de aumento de salario
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Introduzca el porcentaje de aumento de salario: ");
+            System.out.print(MagicStrings.PORCENTAJE_AUMENTO);
             double porcentaje = scanner.nextDouble();
             //aumentamos el salario de los empleados
             sistema.aumentarSalario(porcentaje);
