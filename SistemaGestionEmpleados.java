@@ -6,16 +6,21 @@
 public class SistemaGestionEmpleados {
     //creamos arreglo de empleados
     private Empleado[] empleados;
-    //constructor de la clase
+    /**
+     * constructor de la clase
+     * @param empleados The array of employees
+     */
     public SistemaGestionEmpleados(Empleado[] empleados) {
         this.empleados = empleados;
     }
-    //metodo que aumenta el salario de los empleados
+    /**
+     * metodo que aumenta el salario de los empleados
+     *
+     * @param porcentaje el porcentaje a aumentar en la clase.
+     */
     public void aumentarSalario(double porcentaje) {
-        double nuevoSalario=0.0;
         for (Empleado empleado : empleados) {
-            nuevoSalario = empleado.getSalario() * (1 + porcentaje / 100);
-            empleado.setSalario(nuevoSalario);
+            empleado.aumentarSalario(porcentaje);
         }
     }
 }

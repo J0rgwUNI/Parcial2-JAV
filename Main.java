@@ -1,22 +1,37 @@
 //importamos la clase Scanner para poder leer datos del usuario
 import java.util.Scanner;
-//logica de la clase main que ejecuta el programa
+/**
+ * Esta clase representa un simple sistema de gestión de empleados.
+ * Permite a los usuarios ingresar un aumento porcentual en los salarios
+ * y muestra la lista actualizada de empleados con sus salarios aumentados.
+ */
 public class Main {
-    //creamos un arreglo de empleados
+    /**
+     * Empleado
+     * Arreglo de empleados
+     */
     private static Empleado[] empleados = {
         new Empleado("Juan", "Gerente", 1000),
         new Empleado("Pedro", "Jefe de Proyecto", 800),
         new Empleado("Maria", "Analista", 600),
         new Empleado("Luis", "Programador", 500)
     };
-    //metodo main que ejecuta el programa    
+    /**
+     * Metodo que imprime la lista de empleados
+     * 
+     *  */    
     private static void listarEMP(Empleado[] empleados) {
         System.out.println(MagicStrings.LISTA_EMPLEADOS);
         for (Empleado empleado : empleados) {
             System.out.println(empleado);
         }
     }
-
+    /**
+     * el metodo main del programa
+     * permite a los usuarios ingresar un aumento porcentual en los salarios
+     * y muestra la lista actualizada de empleados con sus salarios aumentados.
+     * @param args scanner recoge porcentaje a sumar en el salario
+     */
     public static void main(String[] args) {
 
             //creamos el objeto de la clase SistemaGestionEmpleados
